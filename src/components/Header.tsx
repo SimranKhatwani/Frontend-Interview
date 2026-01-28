@@ -1,11 +1,13 @@
+import { Book } from "lucide-react";
+
 const Header = () => {
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-linear-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-            ⚡
+          <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white">
+            <Book size={20} />
           </div>
           <span className="font-bold text-lg text-gray-900">CA MONK</span>
         </div>

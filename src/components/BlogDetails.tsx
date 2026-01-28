@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchBlogById } from "../api/blogs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Share2, ThumbsUp, MessageCircle } from "lucide-react";
 
 const categoryColors: Record<string, string> = {
   FINANCE: "bg-blue-100 text-blue-700",
@@ -88,8 +89,9 @@ const BlogDetails = ({ id }: { id: number | null }) => {
               </strong>
             </span>
             <div className="ml-auto">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white text-sm">
-                ⬆ Share Article
+              <Button className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm flex items-center gap-2">
+                <Share2 size={16} />
+                Share
               </Button>
             </div>
           </div>
@@ -121,17 +123,16 @@ const BlogDetails = ({ id }: { id: number | null }) => {
 
           {/* Author Section */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-center gap-4">
-            <div className="w-12 h-12 bg-linear-to-br from-blue-400 to-purple-600 rounded-full"></div>
             <div>
               <p className="font-semibold text-gray-900">Written by Arjun Mehta</p>
               <p className="text-sm text-gray-500">Senior Financial Analyst</p>
             </div>
             <div className="ml-auto flex gap-2">
-              <button className="p-2 hover:bg-gray-100 rounded-lg transition">
-                👍
+              <button className="p-2 hover:bg-gray-100 rounded-lg transition" title="Like">
+                <ThumbsUp size={20} className="text-gray-600" />
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded-lg transition">
-                💬
+              <button className="p-2 hover:bg-gray-100 rounded-lg transition" title="Comment">
+                <MessageCircle size={20} className="text-gray-600" />
               </button>
             </div>
           </div>
